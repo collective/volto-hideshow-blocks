@@ -30,7 +30,22 @@ Collapsed blocks
 <img alt="Form counter" src="./docs/collapsed-blocks.png" width="700" />
 
 
+## Optional
+If you want to improve the display of html and slate table blocks toolbars, add this configuration:
 
+```code
+config.blocks.blocksConfig = {
+  ...config.blocks.blocksConfig,
+  html: {
+    ...config.blocks.blocksConfig.html,
+    edit: EditHTMLBlock,
+  },
+  slateTable: {
+    ...config.blocks.blocksConfig.slateTable,
+    edit: TableBlockEdit,
+  },
+};
+```
 
 ## Attention!
 
