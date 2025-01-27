@@ -1,7 +1,7 @@
 /**
-* CUSTOMIZATIONS:
-* - added configuration of experimental.hideShowBlocks to display eye button
-*/
+ * CUSTOMIZATIONS:
+ * - added configuration of experimental.hideShowBlocks to display eye button
+ */
 
 import React from 'react';
 import { Icon } from '@plone/volto/components';

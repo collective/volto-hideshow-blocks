@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2025-01-22T13:46:31.783Z\n"
+"POT-Creation-Date: 2025-01-27T10:01:13.182Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -13,12 +13,102 @@ msgstr ""
 "Preferred-Encodings: utf-8\n"
 "Domain: volto\n"
 
+#. Default: "<p>Add some HTML here</p>"
+#: components/HTML/Edit
+msgid "<p>Add some HTML here</p>"
+msgstr ""
+
+#. Default: "Bottom"
+#: components/Table/TableBlockEdit
+msgid "Bottom"
+msgstr ""
+
+#. Default: "Center"
+#: components/Table/TableBlockEdit
+msgid "Center"
+msgstr ""
+
+#. Default: "Clear"
+#: components/HTML/Edit
+msgid "Clear"
+msgstr ""
+
+#. Default: "Code"
+#: components/HTML/Edit
+msgid "Code"
+msgstr ""
+
+#. Default: "Delete col"
+#: components/Table/TableBlockEdit
+msgid "Delete col"
+msgstr ""
+
+#. Default: "Delete row"
+#: components/Table/TableBlockEdit
+msgid "Delete row"
+msgstr ""
+
 #. Default: "Hide blocks from page preview"
 #: components/ToggleBlocksPreviewToolbar/ToggleBlocksPreviewToolbar
 msgid "Hide blocks from page preview"
 msgstr ""
 
+#. Default: "Insert col after"
+#: components/Table/TableBlockEdit
+msgid "Insert col after"
+msgstr ""
+
+#. Default: "Insert col before"
+#: components/Table/TableBlockEdit
+msgid "Insert col before"
+msgstr ""
+
+#. Default: "Insert row after"
+#: components/Table/TableBlockEdit
+msgid "Insert row after"
+msgstr ""
+
+#. Default: "Insert row before"
+#: components/Table/TableBlockEdit
+msgid "Insert row before"
+msgstr ""
+
+#. Default: "Left"
+#: components/Table/TableBlockEdit
+msgid "Left"
+msgstr ""
+
+#. Default: "Middle"
+#: components/Table/TableBlockEdit
+msgid "Middle"
+msgstr ""
+
+#. Default: "Prettify your code"
+#: components/HTML/Edit
+msgid "Prettify your code"
+msgstr ""
+
+#. Default: "Preview"
+#: components/HTML/Edit
+msgid "Preview"
+msgstr ""
+
+#. Default: "Right"
+#: components/Table/TableBlockEdit
+msgid "Right"
+msgstr ""
+
 #. Default: "Show blocks from page preview"
 #: components/ToggleBlocksPreviewToolbar/ToggleBlocksPreviewToolbar
 msgid "Show blocks from page preview"
+msgstr ""
+
+#. Default: "Source"
+#: components/HTML/Edit
+msgid "Source"
+msgstr ""
+
+#. Default: "Top"
+#: components/Table/TableBlockEdit
+msgid "Top"
 msgstr ""

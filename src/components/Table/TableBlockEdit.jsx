@@ -13,9 +13,9 @@ import { Button, Table, Popup } from 'semantic-ui-react';
 import cx from 'classnames';
 import { defineMessages, injectIntl } from 'react-intl';
 
-import Cell from './Cell';
+import Cell from '@plone/volto-slate/blocks/Table/Cell';
 import { BlockDataForm, Icon, SidebarPortal } from '@plone/volto/components';
-import TableSchema from './schema';
+import TableSchema from '@plone/volto-slate/blocks/Table/schema';
 
 import rowBeforeSVG from '@plone/volto/icons/row-before.svg';
 import rowAfterSVG from '@plone/volto/icons/row-after.svg';

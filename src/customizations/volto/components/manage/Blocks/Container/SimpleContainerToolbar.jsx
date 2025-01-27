@@ -1,7 +1,7 @@
 /**
-* CUSTOMIZATIONS:
-* - added Popup element in Container toolbar button
-*/
+ * CUSTOMIZATIONS:
+ * - added Popup element in Container toolbar button
+ */
 
 import { defineMessages, useIntl } from 'react-intl';
 import { Button, Popup } from 'semantic-ui-react';

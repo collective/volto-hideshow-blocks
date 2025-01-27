@@ -1,6 +1,6 @@
 /**
  * CUSTOMIZATIONS:
- * - added "hidden" className into wrapper block and connected toggleBlocksPreviewState
+ * - added "hidden" and "collapsed" classNames into wrapper block and connected toggleBlocksPreview state.
  *
  * Edit block.
  * @module components/manage/Blocks/Block/Edit
