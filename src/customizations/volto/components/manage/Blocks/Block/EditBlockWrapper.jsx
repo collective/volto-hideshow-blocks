@@ -112,6 +112,7 @@ const EditBlockWrapper = (props) => {
                 <Button
                   icon
                   basic
+                  type="button"
                   color={!data.hidden ? 'grey' : 'red'}
                   onClick={() =>
                     onChangeBlock(block, {
