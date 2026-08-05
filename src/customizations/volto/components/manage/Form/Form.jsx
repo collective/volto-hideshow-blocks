@@ -448,15 +448,18 @@ class Form extends Component {
 
       if ((event.ctrlKey || event.metaKey) && !event.shiftKey) {
         multiSelected = this.state.multiSelected || [];
+        const isSameAsPreviousSelection = id === this.state.selected;
         if (!this.state.multiSelected.includes(this.state.selected)) {
           multiSelected = [...multiSelected, this.state.selected];
           selected = null;
         }
-        if (this.state.multiSelected.includes(id)) {
-          selected = null;
-          multiSelected = without(multiSelected, id);
-        } else {
-          multiSelected = [...multiSelected, id];
+        if (!isSameAsPreviousSelection) {
+          if (this.state.multiSelected.includes(id)) {
+            selected = null;
+            multiSelected = without(multiSelected, id);
+          } else {
+            multiSelected = [...multiSelected, id];
+          }
         }
       }
     }
