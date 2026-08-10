@@ -420,14 +420,28 @@ class Form extends Component {
    * @returns {undefined}
    */
   onSelectBlock(id, isMultipleSelection, event) {
+    const formData = this.state.formData;
+
+    if (!isMultipleSelection && this.state.multiSelected.length > 0) {
+      const blocksFieldname = getBlocksFieldname(formData);
+      const blockType = formData[blocksFieldname]?.[id]?.['@type'];
+      // A plain click on a required block (e.g. "title") must not steal the
+      // selection away from an existing multi-selection: keep the other
+      // blocks selected and simply ignore the click on the title.
+      if (config.blocks.requiredBlocks.includes(blockType)) {
+        return;
+      }
+    }
+
     let multiSelected = [];
     let selected = id;
-    const formData = this.state.formData;
 
     if (isMultipleSelection) {
       selected = null;
+      const blocksFieldname = getBlocksFieldname(formData);
       const blocksLayoutFieldname = getBlocksLayoutFieldname(formData);
 
+      const blocks = formData[blocksFieldname];
       const blocks_layout = formData[blocksLayoutFieldname].items;
 
       if (event.shiftKey) {
@@ -462,6 +476,14 @@ class Form extends Component {
           }
         }
       }
+
+      // Required blocks (e.g. "title") must never end up in a multi-selection,
+      // so they can't be copied/cut/pasted even if selected by mistake (e.g. a
+      // shift+click range started with focus still on the title block).
+      multiSelected = multiSelected.filter(
+        (blockId) =>
+          !config.blocks.requiredBlocks.includes(blocks[blockId]?.['@type']),
+      );
     }
 
     this.setState({
