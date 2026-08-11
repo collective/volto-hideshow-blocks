@@ -426,8 +426,10 @@ class Form extends Component {
 
     if (isMultipleSelection) {
       selected = null;
+      const blocksFieldname = getBlocksFieldname(formData);
       const blocksLayoutFieldname = getBlocksLayoutFieldname(formData);
 
+      const blocks = formData[blocksFieldname];
       const blocks_layout = formData[blocksLayoutFieldname].items;
 
       if (event.shiftKey) {
@@ -462,6 +464,14 @@ class Form extends Component {
           }
         }
       }
+
+      // Required blocks (e.g. "title") must never end up in a multi-selection,
+      // so they can't be copied/cut/pasted even if selected by mistake (e.g. a
+      // shift+click range started with focus still on the title block).
+      multiSelected = multiSelected.filter(
+        (blockId) =>
+          !config.blocks.requiredBlocks.includes(blocks[blockId]?.['@type']),
+      );
     }
 
     this.setState({
