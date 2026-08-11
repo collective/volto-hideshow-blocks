@@ -420,21 +420,9 @@ class Form extends Component {
    * @returns {undefined}
    */
   onSelectBlock(id, isMultipleSelection, event) {
-    const formData = this.state.formData;
-
-    if (!isMultipleSelection && this.state.multiSelected.length > 0) {
-      const blocksFieldname = getBlocksFieldname(formData);
-      const blockType = formData[blocksFieldname]?.[id]?.['@type'];
-      // A plain click on a required block (e.g. "title") must not steal the
-      // selection away from an existing multi-selection: keep the other
-      // blocks selected and simply ignore the click on the title.
-      if (config.blocks.requiredBlocks.includes(blockType)) {
-        return;
-      }
-    }
-
     let multiSelected = [];
     let selected = id;
+    const formData = this.state.formData;
 
     if (isMultipleSelection) {
       selected = null;
