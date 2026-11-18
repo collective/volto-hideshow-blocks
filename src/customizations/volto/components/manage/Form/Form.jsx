@@ -465,13 +465,18 @@ class Form extends Component {
         }
       }
 
-      // Required blocks (e.g. "title") must never end up in a multi-selection,
-      // so they can't be copied/cut/pasted even if selected by mistake (e.g. a
-      // shift+click range started with focus still on the title block).
-      multiSelected = multiSelected.filter(
-        (blockId) =>
-          !config.blocks.requiredBlocks.includes(blocks[blockId]?.['@type']),
-      );
+      // The title block and required blocks must never end up in a
+      // multi-selection, so they can't be copied/cut/pasted even if selected by
+      // mistake (e.g. a shift+click range started with focus still on the
+      // title block). "title" is checked explicitly because Volto 19+ no longer
+      // lists it in requiredBlocks (plone/volto#6792).
+      multiSelected = multiSelected.filter((blockId) => {
+        const blockType = blocks[blockId]?.['@type'];
+        return (
+          blockType !== 'title' &&
+          !config.blocks.requiredBlocks.includes(blockType)
+        );
+      });
     }
 
     this.setState({
